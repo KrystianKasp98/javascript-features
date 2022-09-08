@@ -1,6 +1,6 @@
 console.log("hello world");
-const worker = new Worker("worker.js")// podajemy sciezke do naszego skryptu dla web workera
-//referencja do worker.onmessage :D
+const worker = new Worker("worker.js")// it' reference to our webworker file
+//referencja to onmessage, after we receive respond from webworker
 worker.onmessage = function (message){
     alert(message.data);
 }
@@ -10,7 +10,7 @@ const sumButton = document.querySelector("#sumButton");
 const bgButton = document.querySelector("#bgButton");
 
 sumButton.addEventListener("click", e =>{
-    worker.postMessage("hello how've you been?",window);//wyslanie info do webworkera
+    worker.postMessage("hello how've you been?",window);//sending message to weborker
 });
 
 bgButton.addEventListener("click", e =>{
