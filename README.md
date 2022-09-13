@@ -1,2 +1,2 @@
 # javascript-features
-It's repo for javascript api
+It's repo for javascript features
