@@ -13,7 +13,7 @@
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-push": "CI=true npm run eslint:fix npm run test"
+      "pre-push": "CI=true npm run eslint:fix && npm run test"
     }
   },
   "devDependencies": {
