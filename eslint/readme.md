@@ -19,3 +19,7 @@ example:
 ```npx husky add .husky/pre-commit "npm run test && npm run eslit:fix"```
 
 ```git add .husky/pre-commit```
+
+remove hooks:
+
+```git config --unset core.hooksPath```
