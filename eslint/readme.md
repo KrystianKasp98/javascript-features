@@ -23,3 +23,5 @@ example:
 remove hooks:
 
 ```git config --unset core.hooksPath```
+
+```all husky hooks are stored in .husky/ ```
