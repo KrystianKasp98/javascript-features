@@ -4,15 +4,18 @@
 
 ```npm run eslint:fix``` - same as above and fix possible problems
 
-add to this line of code:
+## How to enable husky:
 
-```JSON
-  "husky": {
-    "hooks": {
-      "pre-push": "CI=true npm run eslint:fix && npm run test"
-    }
-  },
-```
+https://typicode.github.io/husky/#/
 
-to ```package.json```
+```npm install husky --save-dev```
 
+```npx husky install```
+
+```npx husky add .husky/pre-commit "npm run {scriptName}"```
+
+example:
+
+```npx husky add .husky/pre-commit "npm run test && npm run eslit:fix"```
+
+```git add .husky/pre-commit```
