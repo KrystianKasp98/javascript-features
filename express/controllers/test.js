@@ -1,4 +1,4 @@
-const {data} = require("../data/index");
+const {data} = require("../data/index"); //import dbAPI instead static data
 const ErrorHandler = require("../error/index");
 
 class ControllerTest extends ErrorHandler {
