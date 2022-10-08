@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.4
+    ports:
+      - "9200:9200"
+    environment:
+      discovery.type: single-node
+      ES_NO_CLUSTER: "true"
+      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.4
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
