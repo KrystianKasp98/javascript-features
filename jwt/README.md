@@ -14,17 +14,17 @@ you have to add to ```package.json```:
 
 #### POST(get) token by login
 
-[get-token](https://snipboard.io/h5EUqH.jpg)
+![get-token](https://snipboard.io/h5EUqH.jpg)
 
 #### GET admin resources by token auth
 
-[get-admin-resources](https://snipboard.io/NM8z1J.jpg)
+![get-admin-resources](https://snipboard.io/NM8z1J.jpg)
 
 #### POST(get) token by refresh token
 
-[get-token-by-refresh](https://snipboard.io/exHODT.jpg)
+![get-token-by-refresh](https://snipboard.io/exHODT.jpg)
 
 #### DELETE refresh token by refresh token
 
-[delete-refresh-token](https://snipboard.io/GBsmCK.jpg)
+![delete-refresh-token](https://snipboard.io/GBsmCK.jpg)
 
