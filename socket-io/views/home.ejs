@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.socket.io/3.1.2/socket.io.min.js"></script>
+</head>
+<style>
+  body{
+    background-color: grey;
+  }
+  .message-wrapper{
+    background-color: #fff;
+    width: 500px;
+    height: 200px;
+    overflow: auto;
+    padding: 20px;
+  }
+  .message-stranger{
+    margin-left: 300px;
+  }
+</style>
+<body>
+  <input type="text" class="message">
+  <button onclick="sendMessage()">Send message</button>
+
+  <h1>Message box</h1>
+  <div class="message-wrapper">
+
+  </div>
+
+  <script>
+    const socket = io('http://localhost:3001');
+    // socket.on('connection');
+    const input = document.querySelector('.message');
+    const messageWrapper = document.querySelector('.message-wrapper');
+
+    socket.on('broadcast', (data) => {
+      createMessage(data, "Stranger");
+      console.log('heeeeeeeeeeej');
+    });
+
+    const sendMessage = () => {
+      socket.emit('message', input.value);
+      createMessage(input.value, "Iam");
+      input.value = "";
+    };
+
+    const createMessage = (text, who) => {
+      const div = document.createElement('div');
+      const br = document.createElement('br');
+      div.innerHTML = `${who}: ${text} <br/>
+      ${new Date().toISOString().replace("T"," ").substr(0,19)}`;
+      if(who === "Stranger"){
+        div.classList.add('message-stranger')
+      }
+      messageWrapper.appendChild(div);
+      messageWrapper.appendChild(br);
+    }
+
+  </script>
+</body>
+</html>
