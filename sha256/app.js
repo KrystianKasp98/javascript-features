@@ -20,6 +20,9 @@ app.use(cors());
 app.use(json());
 app.use(urlencoded({extended: true}));
 
+//static
+app.use(express.static('static'));
+
 // routes
 app.get(mainPath, (req, res) => {
   res.status(200).json({message: 'hello'});
