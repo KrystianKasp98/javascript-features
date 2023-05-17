@@ -1,24 +1,36 @@
-const apiUrl = 'http://api.nbp.pl/api/cenyzlota/last/20';
+const apiUrl = 'http://api.nbp.pl/api/cenyzlota/last/20?fromat=json';
+let i = 1;
+
+const log = (obj) => {
+  console.log(obj, `----> No# ${i}`);
+  i++;
+}
 
 // promise chain way
 const promise = fetch(apiUrl).
   then((res) => {
-    console.log(res); // 3
-    console.log('after promise chain clg'); // 4
+    log(res);
+    return res.json();
   }).
-  catch((err) => console.log(err)); // optional 3
+  then(data => {
+    log(data);
+    log('after promise chain clg');
+  }).
+  catch((err) => console.log(err));
 
 // async/await way
 const doPromise = async () => {
   try {
-    const promise = await fetch(apiUrl);
-    console.log(promise); // 5
-    console.log('after async/await clg'); // 6
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    log(response);
+    log(data)
+    log('after async/await clg'); // 6
   } catch (err) {
-    console.log(err) // optional 4
+    log(err) // optional 4
   }
 }
 doPromise();
 
-console.log('1'); // 1
-console.log('2'); // 2
+log('1');
+log('2');
