@@ -9,10 +9,15 @@ function lesson(lessonNumber) {
 }
 
 async function learnLessons() {
-  const firstLesson = await lesson(1);
-  const secondLesson = await lesson(firstLesson);
-  const thirdLesson = await lesson(secondLesson);
-  const fourthLesson = await lesson(thirdLesson);
+  // const firstLesson = await lesson(1);
+  // const secondLesson = await lesson(firstLesson);
+  // const thirdLesson = await lesson(secondLesson);
+  // const fourthLesson = await lesson(thirdLesson);
+  await lesson(1);
+  await lesson(2);
+  await lesson(3);
+  await lesson(4);
+  await lesson(5);
 }
 
 learnLessons();
