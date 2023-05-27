@@ -12,4 +12,4 @@ async function init() {
 
 getSum(1, 1).then(res => console.log(res, '--- 2')); //2, return resolved promise - 2
 console.log(getSum(), '--- 1'); //1, return promise
-init(); // return resolved promise - 2
+init();
