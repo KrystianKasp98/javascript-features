@@ -3,5 +3,4 @@ const object = {};
 if (object) {
   object.property = "value";
 }
-
 console.log(object);
