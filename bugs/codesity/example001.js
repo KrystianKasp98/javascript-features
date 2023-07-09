@@ -12,5 +12,5 @@ const blockCPUThread = (delayMs) => {
 }
 
 blockCPUThread(2500);
-console.log('hej jak sie masz?')
+console.log('hej jak sie masz?');
 
